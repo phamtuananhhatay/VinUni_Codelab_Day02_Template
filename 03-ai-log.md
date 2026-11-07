@@ -12,7 +12,7 @@ Ban đầu AI suy ra case nhóm là xử lý pin thấp vì đó là nội dung 
 
 ## Tôi đã điều chỉnh cách dùng AI như thế nào?
 
-Tôi xác định rõ use case, đầu vào (tin nhắn tài xế và GPS thực tế), đầu ra mong muốn (gợi ý điểm đón cho điều phối viên), và ranh giới (không tự gán cuốc, sửa GPS hoặc gửi tin). Với dữ liệu chưa có, tôi yêu cầu đánh dấu “cần xác minh” thay vì tự tạo con số. Prototype giữ nhánh pin thấp vì starter/autograder yêu cầu, nhưng nhánh đó được xem là kiểm tra an toàn phụ chứ không thay thế case chính của nhóm.
+Tôi cung cấp rõ case nhóm chọn: tối ưu điểm đón từ tin nhắn tài xế và GPS. AI đề xuất phạm vi đầu ra nháp cho điều phối viên và các ranh giới không tự gán cuốc, sửa GPS hoặc gửi tin. Những dữ liệu chưa có được gắn nhãn “cần xác minh”. Prototype giữ nhánh pin thấp theo starter/autograder như một kiểm tra phụ; ngưỡng pin của bài lab chưa được xác nhận là chính sách thực tế của Xanh SM.
 
 ## Bài học và việc cần làm tiếp
 

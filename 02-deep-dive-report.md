@@ -64,6 +64,24 @@ Các bước 1–3 được nêu trong [Trung tâm giải đáp Green SM](https:
 
 **Fallback:** lỗi model, JSON sai schema, GPS thiếu/mâu thuẫn, hoặc gợi ý không vượt qua rule checks → không cập nhật gì; điều phối viên tiếp tục xử lý thủ công.
 
+**Sơ đồ luồng tương lai đề xuất:**
+
+```mermaid
+flowchart TD
+    A["Tin nhắn tài xế + GPS/chuyến đã xác minh"] --> B{"Dữ liệu đầy đủ, nhất quán?"}
+    B -->|Không| F["Fallback: hỏi lại và xử lý thủ công"]
+    B -->|Có| C["LLM hiểu ý định và soạn gợi ý nháp"]
+    C --> D{"JSON, tọa độ và điều kiện nghiệp vụ hợp lệ?"}
+    D -->|Không| F
+    D -->|Có| H{"Điều phối viên duyệt?"}
+    H -->|Không| F
+    H -->|Có| U["Người được phép cập nhật dispatch và phản hồi"]
+```
+
+Validator địa lý và tích hợp phê duyệt trong sơ đồ là thiết kế đề xuất. Prototype hiện chỉ gọi LLM và kiểm tra output của ba case tổng hợp; chưa hiện thực toàn bộ sơ đồ.
+
+**Phạm vi quy tắc pin:** ngưỡng dưới 5% và action `dispatch_mobile_charger` là quy ước kiểm tra của starter code bài lab. Chưa có nguồn xác nhận đây là chính sách vận hành thực tế của Xanh SM.
+
 ## 4. Prototype & Boundary Tests
 
 ### Thiết lập và phạm vi

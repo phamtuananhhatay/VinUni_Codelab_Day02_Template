@@ -11,6 +11,9 @@
 | 3 | Vinhomes | Lặp lại | Phân loại phản ánh cư dân gửi qua ứng dụng và chuyển đến đúng đội vận hành/tòa nhà. |
 | 4 | Vinmec | Tốn thời gian | Soạn bản nháp tóm tắt xuất viện từ bệnh án và ghi chú đã được bác sĩ xác nhận; bác sĩ duyệt trước khi phát hành. |
 | 5 | Vinpearl | Pain từ người khác | Phát hiện và ưu tiên các đánh giá có phản ánh khẩn cấp về phòng, vệ sinh hoặc trải nghiệm để quản lý xử lý. |
+| 6 | Vinpearl | AI-upgrade | Tạo bản nháp trả lời câu hỏi tự do về giờ nhận phòng, tiện ích và thủ tục từ chính sách đã duyệt, giúp nhân viên điều chỉnh phản hồi theo ngữ cảnh. |
+
+Sáu cơ hội trên bao phủ đủ bốn lenses: Lặp lại, Tốn thời gian, AI-upgrade và Pain từ người khác. Đây là các giả thuyết scoping; chưa phải kết luận khảo sát nội bộ tại các công ty.
 
 ## Phase 2 — QUICK-ASSESS
 
@@ -48,6 +51,10 @@
 ## Lựa chọn để Deep-Dive
 
 Nhóm chọn **Card #1 — Xanh SM Smart Dispatching**. Phạm vi prototype được thu hẹp thành gợi ý cho điều phối viên dựa trên tin nhắn tài xế và GPS đã xác minh. Nguồn công khai giúp xác nhận bối cảnh khách có thể liên hệ tài xế và đổi điểm đón sau khi tài xế nhận chuyến; nhóm vẫn cần xác nhận quy trình điều phối nội bộ và đo baseline trước khi nộp bản cuối.
+
+- **Ưu tiên Card #1:** Đây là case nhóm đã chọn; phần hiểu tin nhắn có thể thử bằng dữ liệu tổng hợp, với đầu ra nháp và người duyệt làm ranh giới rõ ràng. Chưa khẳng định đã có quyền truy cập GPS hoặc log thật.
+- **Chưa chọn Card #2:** Cần danh mục sự cố, ma trận trách nhiệm theo tòa nhà và dữ liệu gán nhãn của ban quản lý; project hiện chưa có các dữ liệu đó để đánh giá chất lượng routing.
+- **Chưa chọn Card #3:** Phần ghép mã giao dịch và tính sai lệch số tiền ưu tiên quy tắc xác định. Chỉ cân nhắc LLM/OCR nếu có hóa đơn không đồng nhất và bộ mẫu được phép dùng, nên chưa cần một prototype LLM cho toàn bộ luồng.
 
 ## Kiểm chứng kỹ thuật ban đầu
 
