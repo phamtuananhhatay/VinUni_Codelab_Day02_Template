@@ -14,3 +14,24 @@
 
 ### 3.3. Future-State Flow & AI Fit 
 ![Quy trình tương lai](04-workflow-diagram_3.3.jpg)
+
+##  Phase 5 — EVALUATE 
+
+### AI Readiness Checklist:
+1. [ ] Chúng tôi có sẵn dữ liệu mẫu/logs sạch để test?
+2. [x] Rủi ro khi AI sai có nằm trong tầm kiểm soát (qua HITL hoặc Fallback)?
+3. [ ] Stakeholders sẵn sàng thay đổi quy trình làm việc cũ?
+
+### Quyết định cuối cùng của Ban Giám Đốc Vin Smart Future:
+[ ] **GO (Bắt đầu xây dựng Prototype):** Bắt đầu phát triển với scope hẹp.
+[x] **NOT YET (Cần tích lũy thêm dữ liệu/xác lập baseline):** Trì hoãn để chuẩn bị thêm.
+[ ] **NO-GO (Không khả thi / Rule-based tốt hơn):** Hủy bỏ dự án AI này.
+
+**Justification (Lý giải quyết định dựa trên bằng chứng kỹ thuật và chi phí):**
+> *Viết lý giải chi tiết tại đây*
+- Kết quả 3 bài kiểm thử cho thấy mô hình bước đầu giữ đúng định dạng và ranh giới: không tự xác nhận lịch, chẩn đoán hoặc bịa dữ liệu nguồn lực. Tuy nhiên, đây mới là kiểm thử prompt, chưa chứng minh giải pháp giảm thời gian chờ từ 60 xuống 30 phút.
+
+- Nhóm chưa có dữ liệu thực tế để xác lập thời gian chờ, nguyên nhân chậm và khả năng đáp ứng của xưởng. Chi phí API, thời gian nhân viên duyệt và chi phí tích hợp cũng chưa được đo, nên chưa đủ cơ sở đánh giá hiệu quả đầu tư.
+
+- Bước tiếp theo là thu thập dữ liệu tại một xưởng, xây dựng baseline kiểm tra lịch và phụ tùng bằng rule-based, rồi so sánh với phương án có LLM. Chỉ chuyển sang GO khi chứng minh phần AI giảm công sức tiếp nhận mà vẫn bảo đảm độ chính xác và chi phí phù hợp.
+---
