@@ -39,40 +39,48 @@ Bạn phải kích hoạt môi trường ảo mỗi khi mở terminal mới trư
 *   **Dấu hiệu kích hoạt thành công:** Ở đầu dòng lệnh của terminal xuất hiện ký hiệu `(.venv)`.
 
 ### 📥 Bước 3: Cài đặt thư viện cần thiết
-Chạy lệnh sau để cài đặt SDK của Gemini và các thư viện hỗ trợ:
-```bash
-pip install google-genai google-generativeai pytest
-```
+Chạy lệnh từ thư mục gốc project để cài các gói trong `requirements.txt` vào đúng môi trường ảo:
+* **Windows (PowerShell):**
+    ```powershell
+    .venv\Scripts\python.exe -m pip install -r requirements.txt
+    ```
+* **macOS / Linux:**
+    ```bash
+    .venv/bin/python -m pip install -r requirements.txt
+    ```
+
+Lệnh dùng trực tiếp Python trong `.venv`, tránh cài package vào một Python khác với Python chạy bài.
 
 ---
 
 ## 🔑 2. Thiết lập biến môi trường `GEMINI_API_KEY`
 
-Để code Python gọi được Gemini API, bạn cần khai báo khóa API của mình vào biến môi trường. **Lưu ý: Không được dán trực tiếp API Key vào code để tránh bị lộ khóa khi push lên GitHub.**
+### Cách dùng file `.env`
 
-Hãy mở terminal đã kích hoạt `(.venv)` và chạy lệnh nạp khóa tương ứng:
+`.env` là **file văn bản**, đặt ở thư mục gốc project, cùng cấp với `README.md` và `requirements.txt`. File này đã được tạo với key để trống. Nếu clone project mới, copy `.env.example` thành `.env`.
 
-### 🪟 Trên Windows:
-*   **Nếu dùng PowerShell (Mặc định của VS Code / Cursor):**
-    ```powershell
-    $env:GEMINI_API_KEY="AIzaSyYourGeminiApiKeyHere"
-    ```
-*   **Nếu dùng Command Prompt (CMD):**
-    ```cmd
-    set GEMINI_API_KEY=AIzaSyYourGeminiApiKeyHere
-    ```
+Mở `.env`, dán key thật được cấp trong [Google AI Studio](https://aistudio.google.com/apikey) sau dấu `=` của `GEMINI_API_KEY`, rồi lưu file:
 
-### 🍎 Trên macOS / Linux:
-*   **Dùng Terminal:**
-    ```bash
-    export GEMINI_API_KEY="AIzaSyYourGeminiApiKeyHere"
-    ```
-
-### 🧪 Kiểm tra xem API Key đã nhận diện chưa:
-Chạy lệnh python nhanh này trong terminal để kiểm tra:
-```bash
-python -c "import os; print('API Key status: OK' if os.getenv('GEMINI_API_KEY') else 'API Key status: MISSING')"
+```dotenv
+GEMINI_API_KEY=YOUR_REAL_KEY
+GEMINI_MODEL=gemini-3.5-flash-lite
 ```
+
+Thay `YOUR_REAL_KEY` bằng key của bạn; không dùng nguyên chuỗi ví dụ. Tên file phải đúng là `.env`, không phải `.env.txt`.
+
+Prototype tự đọc `.env` bằng `python-dotenv` trước khi lấy key/model. Đường dẫn được tính từ file Python, nên có thể chạy từ thư mục khác. **Giá trị trong `.env` được ưu tiên hơn biến đã đặt trong terminal** (`override=True`); xem [tài liệu python-dotenv](https://github.com/theskumar/python-dotenv#readme).
+
+`.gitignore` bỏ qua `.env` và các file `.env.*`, ngoại trừ `.env.example` chỉ chứa mẫu trống. Không dán key vào code hoặc `.env.example`.
+
+### Kiểm tra đã nạp key (không in key)
+
+Tại thư mục gốc project, sau khi kích hoạt `.venv`, chạy:
+
+```bash
+python -c "import os; from dotenv import load_dotenv; load_dotenv('.env', override=True, encoding='utf-8-sig'); print('API Key status: OK' if os.getenv('GEMINI_API_KEY') else 'API Key status: MISSING')"
+```
+
+`OK` chỉ xác nhận có giá trị cấu hình, chưa xác nhận Google chấp nhận key. Sau đó chạy `starter-code/prompt_prototype.py` như bình thường.
 
 ---
 
@@ -194,6 +202,8 @@ Sơ đồ trực quan hóa quy trình vận hành hiện tại.
 
 ### 🐍 5. File Code `.py` (Bài tập Code Cá nhân)
 *   **Vị trí:** Lưu tại file `.py` cá nhân của bạn (ví dụ: `starter-code/prompt_prototype.py` hoặc file `.py` được yêu cầu).
+*   **Model của prototype:** Mặc định dùng `gemini-3.5-flash-lite`, là model đã chạy được các case trong project. Model `gemini-2.5-flash` trong tài liệu lab có thể không được cấp cho tài khoản mới; xem [thông tin model của Google](https://ai.google.dev/gemini-api/docs/models/gemini-2.5-flash). Có thể chọn model khác bằng biến môi trường `GEMINI_MODEL`; tên model đang dùng được in ở đầu mỗi lần chạy.
+*   **Chạy prototype:** Dùng `.venv\Scripts\python.exe starter-code\prompt_prototype.py`. Lần xác nhận ngày 07/11/2026 chạy mặc định trên 3.5 Flash-Lite đạt 3/3 case, exit code 0; kết quả lưu trong `02-deep-dive-report.md` và `test-results/`. Tham số `--model` cho phép chọn model riêng, ưu tiên hơn `.env`.
 *   **Lưu ý:** Chỉ nộp trên branch cá nhân (`git push origin <ten-cua-ban>`), không merge vào `main`.
 
 ---

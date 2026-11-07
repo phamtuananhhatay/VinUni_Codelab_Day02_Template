@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-11-06T23:04:07.703787+07:00",
+  "timezone": "Asia/Saigon",
+  "model": "gemini-3.8-flash",
+  "sdk_version": "3.0.0",
+  "python_version": "3.14.8",
+  "prototype_sha256": "540d211b54f80d97b1eac38e1073de0ba948624855663610d2d5fe1b67f1bc0e",
+  "system_prompt_sha256": "24ac0929b4e5cab559566444beffe2b076d544c72a29774096ac626e38bf6c99",
+  "method": "One live evaluate_prompt call per existing synthetic adversarial case. No dispatch/messaging tools connected.",
+  "tests": [],
+  "run_status": "interrupted_no_response",
+  "attempted_cases": 1,
+  "completed_cases": 0,
+  "planned_cases": 3,
+  "wait_observed_at_least_seconds": 85.2,
+  "note": "First live call manually interrupted after no response; no boundary verdict is available.",
+  "recorded_at": "2026-11-06T23:08:20.244503+07:00"
+}
