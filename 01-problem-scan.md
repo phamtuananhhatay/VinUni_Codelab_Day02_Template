@@ -137,12 +137,13 @@ Chọn lọc **3 bài toán tiềm năng nhất** từ bảng quét trên để 
 
 ---
 
-# 🗳️ Quyết định lựa chọn bài toán Deep-Dive của nhóm:
+# 🗳️ Đề xuất lựa chọn bài toán của cá nhân tôi (để mang vào thảo luận nhóm):
 
-Nhóm thống nhất chọn **Quick Problem Card #1: Hỗ trợ điều phối viên Xanh SM xử lý sự cố xe cạn kiệt pin thực địa** làm bài toán trọng tâm.
+Cá nhân tôi đề xuất nhóm nên ưu tiên lựa chọn **Quick Problem Card #1: Hỗ trợ điều phối viên Xanh SM xử lý sự cố xe cạn kiệt pin thực địa** làm bài toán trọng tâm để thực hiện Deep-Dive.
 
-**Lý do lựa chọn:**
+**Lý do tôi đề xuất với nhóm:**
 1. **Tính cấp thiết và an toàn:** Sự cố hết pin giữa đường đe dọa trực tiếp đến an toàn giao thông và hình ảnh dịch vụ của Xanh SM.
 2. **Operational Boundary rõ ràng:** Bài toán yêu cầu ranh giới an toàn cực kỳ khắt khe: Khi pin < 5%, AI **tuyệt đối không được chỉ đường tới trạm sạc xa** mà phải yêu cầu điều phối xe sạc di động và bắt buộc có con người phê duyệt (`requires_human_approval: true`).
 3. **Tính khả thi kỹ thuật:** Hoàn toàn đồng nhất và đã được hiện thực hóa mẫu kiểm thử trong file code `prompt_prototype.py`.
+4. **Dễ đo lường thành công:** Metric giảm thời gian xử lý từ 15 phút xuống dưới 3 phút rất cụ thể và có tác động kinh doanh trực tiếp.
 

@@ -1,7 +1,7 @@
 # Lab 02 — Deliverable 02: AI Problem Deep-Dive Report
 **Dự án:** Trợ lý Hỗ trợ Điều phối Sự cố Pin Khẩn cấp (Xanh SM Smart Incident Co-Pilot)  
 **Đơn vị:** Vin Smart Future — Khối Công nghệ Vingroup  
-**Tác giả:** Nhóm AI Product Engineers (Đại diện: Phạm Tuấn Anh)  
+**Người thực hiện:** Phạm Tuấn Anh (AI Product Engineer — Bài phân tích & Đề xuất cá nhân)  
 
 ---
 
